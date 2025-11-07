@@ -29,8 +29,31 @@ Your output files must be structured exactly as described - output files for all
 Note:
 Your code will only be tested on valid files in the format shown in the 4 example files in this folder - you do not need to validate any data.
 '''
-name = input()
-with open(name, "r") as infile:
+#name = input()
+with open("student_data_10.csv", "r") as infile:
     data = [line.strip().split(",") for line in infile]
+x = 0
+final = []
 for i in data:
-    print(i)
+    if x == 0:
+     x=x+1
+    else:
+     sum = 0
+     count = 0
+     for a in range(1,i.count()):
+          if len(i[a]) > 0:
+             count = count+1
+             sum = sum+int(i[a])
+     avg = sum/count
+     if avg >= 70:
+        grade = "1"
+     elif avg >= 60:
+        grade = "2:1"
+     elif avg >= 50:
+        grade = "2:2"
+     elif avg >= 40:
+        grade = "3"
+     else:
+        grade = "F"
+     
+
