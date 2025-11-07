@@ -56,7 +56,7 @@ for i in data:
       else:
          grade = "F"
       final.append([i[0],f"{avg:.2f}",grade])
-with open((name+"_out"), "a") as outfile:
+with open((name+"_out.csv"), "a") as outfile:
    for i in final:
       line = f"{i[0]},{i[1]},{i[2]}\n"
       outfile.write(line)
